@@ -3,7 +3,7 @@
   display: flex;
   justify-content: center;
   min-height: 100vh;
-  align-items: center;
+
   color: rgba(0, 0, 0, 0.8);
 }
 
@@ -11,7 +11,9 @@
   margin-top: 5vh;
   margin-bottom: 5vh;
   justify-content: center;
-  width: 900px;
+  width: 1000px;
+  min-height: 60vh;
+
   background-color: #f9f9f9;
   box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.9), 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
@@ -42,10 +44,13 @@ h1 {
   max-height: 70vh;
 }
 
+.over {
+  background-color: rgba(0, 0, 0 , .1);
+  border-radius: 20px;
+}
 
 .columns {
   display: flex;
-  width: 100%;
   padding: 8px;
   margin: 5px;
 

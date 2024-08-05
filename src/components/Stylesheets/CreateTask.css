@@ -6,6 +6,7 @@ input {
   border-radius: 15px;
   border: none;
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.9) inset, 10px 10px 15px rgba(0, 0, 0, 0.1) inset;
+  font-weight: 300;
 }
 
 .Task-create button {
@@ -14,4 +15,13 @@ input {
   background-color: #f9f9f9;
   border: none;
   box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.9), 10px 10px 15px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.Task-create button:hover {
+
+  box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.9)inset , 10px 10px 15px rgba(0, 0, 0, 0.1)inset ;
+  cursor: pointer;
 }

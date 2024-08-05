@@ -1,8 +1,9 @@
 .task {
-
+  font-weight: 100;
+  color: grey;
   display: flex;
   justify-content: space-between;
- align-items: center;
+  align-items: center;
   color: black;
   border-radius: 10px;
   background-color: #f9f9f9;
@@ -29,10 +30,12 @@
   box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1) , -10px -10px 10px white;
   width: 30px;
   height: 30px;
+  font-weight: bold;
 }
 
 h3 {
   margin-bottom: 5px;
   margin-top: 10px;
+  font-weight: 600;
 
 }

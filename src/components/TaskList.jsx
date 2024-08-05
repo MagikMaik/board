@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import {useState} from "react"
 import Task from "./Task"
+import { useDrop } from "react-dnd"
 
 export default function TaskList({tasks, setTasks}) {
 
@@ -19,7 +20,7 @@ export default function TaskList({tasks, setTasks}) {
   },[tasks])
 
   const statuses = ["Todos", "In Progress" , "Done"]
-  
+
   return (
     <div className="columns">
       {statuses.map((status, index) => (
@@ -31,18 +32,41 @@ export default function TaskList({tasks, setTasks}) {
 }
 
 function Section({status, tasks, setTasks, todos, inProgress, done}) {
-  let taskToMap = todos
-if(status === "In Progress"){
-  taskToMap = inProgress
-}
-if(status === "Done"){
-  taskToMap = done
-}
 
-const count = taskToMap.length
+  const [{ isOver }, drop] = useDrop(() => ({
+    accept: "task",
+    drop:(item) =>addItemToSection(item.id),
+    collect: (monitor) => ({
+      isOver: !!monitor.isOver()
+    })
+  }))
+
+  let taskToMap = todos
+    if(status === "In Progress"){
+      taskToMap = inProgress
+    }
+    if(status === "Done"){
+      taskToMap = done
+    }
+
+  const count = taskToMap.length
+
+
+  const addItemToSection = (id) => {
+    setTasks((prev) => {
+
+      const mTasks= prev.map(t => {
+        if (t.id ===id ) {
+          return {...t, status: status}
+        }
+        return t
+      })
+      return mTasks
+    })
+  }
 
   return (
-    <div className="row">
+    <div ref={drop} className={`row ${isOver? "over" : null}`}>
       <h2>
         {status} {count}
       </h2>
