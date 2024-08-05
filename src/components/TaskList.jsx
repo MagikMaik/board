@@ -19,7 +19,7 @@ export default function TaskList({tasks, setTasks}) {
   },[tasks])
 
   const statuses = ["Todos", "In Progress" , "Done"]
-
+  
   return (
     <div className="columns">
       {statuses.map((status, index) => (

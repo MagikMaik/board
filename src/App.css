@@ -10,11 +10,11 @@
 .container {
   margin-top: 5vh;
   margin-bottom: 5vh;
-  display: flex;
+
   justify-content: center;
   width: 900px;
   background-color: #f9f9f9;
-  min-height: 80vh;
+  
   box-shadow: -15px -15px 15px rgba(255, 255, 255, 0.9), 15px 15px 15px rgba(0, 0, 0, 0.1);
   border-radius: 15px;
   flex-wrap: wrap;
@@ -23,11 +23,13 @@
 .Task-create {
   width: 100%;
   padding: 20px;
+  height: 60px;
 }
 
 h1 {
   width: 100%;
   margin-left: 20px;
+
 }
 
 .row {
@@ -35,7 +37,7 @@ h1 {
   width: 270px;
   padding: 8px;
   margin: 5px;
-  
+
   margin-bottom: 30px;
 
   scroll-snap-type: y proximity;
