@@ -2,6 +2,7 @@ import React, { useEffect } from "react"
 import {useState} from "react"
 import Task from "./Task"
 import { useDrop } from "react-dnd"
+import toast from "react-hot-toast"
 
 export default function TaskList({tasks, setTasks}) {
 
@@ -61,6 +62,9 @@ function Section({status, tasks, setTasks, todos, inProgress, done}) {
         }
         return t
       })
+
+      localStorage.setItem("tasks", JSON.stringify(mTasks))
+      toast("Task status changed",{icon: "🤞"})
       return mTasks
     })
   }
